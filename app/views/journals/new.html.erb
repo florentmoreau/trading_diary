@@ -1,5 +1,1 @@
-<%= simple_form_for @journal do |f|%>
-<%= f.input :name, placeholder: "Swing trading", label: "Choose name"%>
-<%= f.input :category, collection: ["forex", "action", "crypto"], prompt: "Which category"%>
-<%= f.button :submit, "Add", class: "btn btn-primary"%>
-<% end %>
+<%= render "form" %>
