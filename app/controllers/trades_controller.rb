@@ -43,6 +43,6 @@ class TradesController < ApplicationController
 
   private
   def trade_params
-    params.require(:trade).permit(:trading_value, :journal)
+    params.require(:trade).permit(:trading_value, :category, :size, :open_price, :open_date, :close_price, :close_date, :profit, :comment, :journal)
   end
 end

@@ -1,4 +1,12 @@
 <%= simple_form_for [@journal, @trade], url: journal_trades_path do |f|%>
-<%= f.input :trading_value, placeholder: "EUR/USD", label: "Choose name"%>
+<%= f.input :trading_value, placeholder: "EUR/USD", label: "Trading value"%>
+<%= f.input :category, collection: ["Short/Sell", "Long/Buy"], prompt: "Position type"%>
+<%= f.input :size, placeholder: "0.1", label: "Position size"%>
+<%= f.input :open_price, placeholder: "1.315", label: "Open price"%>
+<%= f.input :open_date, placeholder: "15/06/2018", label: "Open date"%>
+<%= f.input :close_price, placeholder: "1.316", label: "Close price"%>
+<%= f.input :close_date, placeholder: "17/06/2018", label: "Close date"%>
+<%= f.input :profit, placeholder: "100", label: "Profit or Loss"%>
+<%= f.input :comment, placeholder: "Price breakout", label: "Comment"%>
 <%= f.button :submit, "Add", class: "btn btn-primary"%>
 <% end %>

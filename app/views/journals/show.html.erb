@@ -1,4 +1,20 @@
 <div class="container">
   <h1><%= @journal.name %></h1>
   <%= link_to "add trade", new_journal_trade_path(@journal, @trade) %>
+
+  <table class="table table-stripe">
+      <tr>
+        <th>Trading value</th>
+        <th>Position type</th>
+        <th>Size</th>
+        <th>Open price</th>
+        <th>Close price</th>
+        <th>Open date</th>
+        <th>Close date</th>
+        <th>Profit/Loss</th>
+        <th>Comment</th>
+      </tr>
+      <%= render @journal.trades %>
+  </table>
+
 </div>
