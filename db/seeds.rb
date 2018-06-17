@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-   journal1 = Journal.create([{ name: 'Day trading' }, { category: 'Forex' }])
-   journal2 = Journal.create([{ name: 'Swing trading' }, { category: 'Actions' }])
-   journal3 = Journal.create([{ name: 'Crypto trading' }, { category: 'Crypto' }])
+   florent = User.create!(email: "f@f", password: "azerty")
+   thomas = User.create!(email: "t@t", password: "azerty")
+
+   journal1 = Journal.create!(user: florent, name: 'Day trading', category: 'Forex')
+   journal2 = Journal.create!(user: florent, name: 'Swing trading', category: 'Actions')
+   journal3 = Journal.create!(user: thomas, name: 'Crypto trading', category: 'Crypto')

@@ -7,8 +7,13 @@ class JournalsController < ApplicationController
     @journal = Journal.new
   end
 
+  def show
+    @journal = Journal.find(params[:id])
+  end
+
   def create
     @journal = Journal.new(journal_params)
+    @journal.user = current_user
       if @journal.save
         redirect_to journals_path
       else

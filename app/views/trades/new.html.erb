@@ -1,0 +1,4 @@
+<%= simple_form_for [@journal, @trade], url: journal_trades_path do |f|%>
+<%= f.input :trading_value, placeholder: "EUR/USD", label: "Choose name"%>
+<%= f.button :submit, "Add", class: "btn btn-primary"%>
+<% end %>

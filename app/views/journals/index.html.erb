@@ -1,7 +1,12 @@
 <h1>My Journals</h1>
 <% @journals.each do |journal| %>
 <ul>
-  <li><%= journal.name %></li>
-  <li><%= journal.category %></li>
+  <% if journal.user == current_user %>
+    <%= link_to journal.name, journal_path(journal) %>
+    <div class="btn-group" role="group" aria-label="...">
+      <%= link_to "Edit", edit_journal_path(journal), class: "btn btn-default" %>
+      <%= link_to "Delete", journal_path(journal), method: :delete, class: "btn btn-default" %>
+    </div>
+  <% end %>
 </ul>
 <% end %>
