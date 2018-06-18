@@ -16,29 +16,29 @@ class TradesController < ApplicationController
     @trade.user = current_user
     @trade.journal = Journal.find(params[:journal_id])
       if @trade.save!
-        redirect_to journals_path
+        redirect_to journal_path
       else
         render :new
       end
   end
 
   def edit
-    @trade = trade.find(params[:id])
+    @trade = Trade.find(params[:id])
   end
 
   def update
-    @trade = trade.find(params[:id])
+    @trade = Trade.find(params[:id])
     if @trade.update(trade_params)
-      redirect_to trades_path
+      redirect_to journal_path
     else
       render :edit
     end
   end
 
   def destroy
-    @trade = trade.find(params[:id])
+    @trade = Trade.find(params[:id])
     @trade.destroy
-    redirect_to trades_path
+    redirect_to journal_path
   end
 
   private

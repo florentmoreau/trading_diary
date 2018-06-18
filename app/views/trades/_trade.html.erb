@@ -8,6 +8,8 @@
   <th><%= trade.close_date %></th>
   <th><%= trade.profit %></th>
   <th><%= trade.comment %></th>
+  <th><%= link_to "Edit", edit_journal_trade_path(trade), class: "btn btn-default" %></th>
+  <th><%= link_to "Delete", journal_trade_path(trade), method: :delete, class: "btn btn-default" %></th>
 </tr>
 
 

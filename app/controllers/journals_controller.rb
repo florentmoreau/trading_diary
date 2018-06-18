@@ -1,4 +1,5 @@
 class JournalsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @journals = Journal.all
   end
@@ -8,6 +9,7 @@ class JournalsController < ApplicationController
   end
 
   def show
+    @journals = Journal.all
     @journal = Journal.find(params[:id])
   end
 
