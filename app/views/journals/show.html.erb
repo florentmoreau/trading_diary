@@ -1,23 +1,57 @@
-<div id="wrapper">
-  <div id="page-wrapper">
-    <div class="container-fluid">
-      <h1><%= @journal.name %></h1>
-      <%= link_to "add trade", new_journal_trade_path(@journal, @trade) %>
 
-      <table class="table table-stripe">
-          <tr>
-            <th>Trading value</th>
-            <th>Position type</th>
-            <th>Size</th>
-            <th>Open price</th>
-            <th>Close price</th>
-            <th>Open date</th>
-            <th>Close date</th>
-            <th>Profit/Loss</th>
-            <th>Comment</th>
-          </tr>
-          <%= render @journal.trades %>
+<div class="container-fluid">
+  <div class="row align-items-center mb-3">
+    <div class="col-sm-6">
+        <h1 class="h2 mb-0"><%= @journal.name %></h1>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-2">
+      <div class="d-md-flex new-order">
+        <div class="dropdown-show">
+          <a href="#" class="btn btn btn-outline-primary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-icons md-18 align-middle">settings</i>
+            <span class="align-middle">Settings</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <%= link_to "Edit journal", edit_journal_path(@journal), class: "dropdown-item" %>
+              <%= link_to "Delete journal", journal_path(@journal), method: :delete, class: "dropdown-item" %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="card">
+    <div class="card-header d-flex align-items-center justify-content-between">
+    <h4 class="card-title">
+       trading list
+    </h4>
+
+
+     <%= link_to "add trade", new_journal_trade_path(@journal, @trade) %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Trading value</th>
+          <th scope="col" class="text-center">Position type</th>
+          <th scope="col" class="text-center">Size</th>
+          <th scope="col" class="text-center">Open price</th>
+          <th scope="col" class="text-center">Close price</th>
+          <th scope="col" class="text-center">Open date</th>
+          <th scope="col" class="text-center">Close date</th>
+          <th scope="col" class="text-center">Profit/Loss</th>
+          <th scope="col" class="text-center">Comment</th>
+        </tr>
+      </thead>
+      <%= render @journal.trades %>
       </table>
     </div>
   </div>
+  </div>
+
 </div>
+

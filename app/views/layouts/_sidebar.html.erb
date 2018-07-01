@@ -1,0 +1,42 @@
+<nav class="drawer drawer--dark">
+  <div class="drawer-spacer">
+    <div class="media align-items-center">
+      <a href="index.html" class="drawer-brand-circle mr-2">TD</a>
+      <div class="media-body">
+        <a href="index.html" class="h5 m-0 text-link">Trading Diary</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADING -->
+  <div class="py-2 drawer-heading">
+    Pages
+  </div>
+
+  <!-- MENU -->
+  <ul class="drawer-menu" id="mainMenu" data-children=".drawer-submenu">
+    <li class="drawer-menu-item">
+      <%= link_to(index_path) do %>
+        <i class="material-icons">home</i>
+        <span class="drawer-menu-text">Dashboard</i>
+      <% end %>
+    </li>
+
+    <li class="drawer-menu-item drawer-submenu">
+      <a data-toggle="collapse" data-parent="#componentsMenu" href="#" data-target="#uiComponentsMenu" aria-controls="uiComponentsMenu" aria-expanded="false" class="collapsed">
+        <i class="material-icons">library_books</i>
+        <span class="drawer-menu-text">Journals</span>
+      </a>
+        <ul class="collapse" id="uiComponentsMenu" style="">
+            <li class="drawer-menu-item ">
+              <% @journals.each do |journal| %>
+                <% if current_user==journal.user %>
+                    <%= link_to journal.name, journal_path(journal) %>
+                <% end %>
+              <% end %>
+            </li>
+        </ul>
+    </li>
+  </ul>
+
+</nav>

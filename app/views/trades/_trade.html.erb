@@ -1,16 +1,17 @@
-<tr>
-  <th><%= trade.trading_value %></th>
-  <th><%= trade.category %></th>
-  <th><%= trade.size %></th>
-  <th><%= trade.open_price %></th>
-  <th><%= trade.close_price %></th>
-  <th><%= trade.open_date %></th>
-  <th><%= trade.close_date %></th>
-  <th><%= trade.profit %></th>
-  <th><%= trade.comment %></th>
-  <th><%= link_to "Edit", edit_journal_trade_path(trade), class: "btn btn-default" %></th>
-  <th><%= link_to "Delete", journal_trade_path(trade), method: :delete, class: "btn btn-default" %></th>
-</tr>
-
+<tbody>
+  <tr>
+  <td class="align-middle text-center"><%= trade.trading_value %></td>
+  <td class="align-middle text-center"><%= trade.category %></td>
+  <td class="align-middle text-center"><%= trade.size %></td>
+  <td class="align-middle text-center"><%= trade.open_price %></td>
+  <td class="align-middle text-center"><%= trade.close_price %></td>
+  <td class="align-middle text-center"><%= trade.open_date %></td>
+  <td class="align-middle text-center"><%= trade.close_date %></td>
+  <td class="align-middle text-center"><%= trade.profit %></td>
+  <td class="align-middle text-center"><%= trade.comment %></td>
+  <td class="align-middle text-center"><%= link_to "Edit", edit_journal_trade_path(@journal, trade), class: "btn btn-default" %></td>
+  <td class="align-middle text-center"><%= link_to "Delete", journal_trade_path(@journal, trade), method: :delete, class: "btn btn-default" %></td>
+  </tr>
+</tbody>
 
 

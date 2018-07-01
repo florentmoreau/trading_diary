@@ -1,15 +1,21 @@
-// Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+// COLOR PROCESSING FUNCTIONS
+@import "bootstrap/scss/functions";
+@import "bootstrap-color-yiq";
 
-// External libraries
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+// APP THEME VARIABLES
+@import "variables";
 
-// Your CSS partials
-@import "layouts/index";
-@import "components/index";
-@import "pages/index";
+// BOOTSTRAP
+@import "bootstrap/scss/bootstrap";
+
+
+// MDK LAYOUT
+@import 'material-design-kit/src/style';
+
+// MATERIAL FONT ICONS
+@import 'material-icons';
+
+@import 'layout';
+@import 'drawer';
+@import "navbar";
+@import "pages/banner";
